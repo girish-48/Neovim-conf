@@ -62,7 +62,7 @@ return {
 
  -- Which key helper
  {
-      "folke/which-key.nvim", 
+      "folke/which-key.nvim",
       lazy=false,
       opts = {
           preset = "helix", -- Options are classic, modern and helix 
@@ -84,21 +84,31 @@ return {
       lazy = false,
       priority = 1000,
       opts = {
-          style = "night",
-          transparent = true,
-          terminal_colors = true,
-          lualine_bold = true,
-          on_highlights = function(hl, colors)
-              hl.LineNr = { fg = colors.red }
-          end,
-          on_colors = function(colors)
-              colors.fg_gutter = "#b2b8cf"
-              colors.fg_gutter = colors.blue
-              colors.bg_highlight = colors.red
-          end,
+
+        style = "night",
+        transparent = true,
+        terminal_colors = true,
+        lualine_bold = true,
+
+        on_colors = function(colors)
+          -- colors.fg_gutter = colors.dark5
+          colors.bg_highlight = colors.magenta
+        end,
+
+        on_highlights = function(hl, c)
+          hl.LineNr = { fg = c.red }
+          local prompt = "#2d3149"
+          hl.TelescopeNormal        = { bg = c.bg_dark, fg = c.fg_dark, }
+          hl.TelescopeBorder        = { bg = c.bg_dark, fg = c.bg_dark, }
+          hl.TelescopePromptNormal  = { bg = prompt, }
+          hl.TelescopePromptBorder  = { bg = prompt, fg = prompt, }
+          hl.TelescopePromptTitle   = { bg = prompt, fg = prompt, }
+          hl.TelescopePreviewTitle  = { bg = c.bg_dark, fg = c.bg_dark, }
+          hl.TelescopeResultsTitle  = { bg = c.bg_dark, fg = c.bg_dark, }
+        end,
       },
       init = function()
-          vim.cmd([[colorscheme tokyonight]])
+          vim.cmd([[colorscheme tokyonight-night]])
       end,
   },
 
@@ -107,7 +117,7 @@ return {
       'nvim-lualine/lualine.nvim',
       lazy=false,
       dependencies = { 'nvim-tree/nvim-web-devicons' },
-      opts = { 
+      opts = {
           icons_enabled = true,
           theme = 'auto',
           component_separators = { left = '', right = ''},
