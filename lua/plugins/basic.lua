@@ -78,8 +78,8 @@ return {
 
       on_highlights = function(hl, c)
         hl.LineNrAbove = { fg = "#737994" }
-        hl.LineNrBelow = { fg = "#737994" }      -- Inactive line numbers
-        hl.CursorLineNr = { fg = c.red } -- Active line number (cursor line)
+        hl.LineNrBelow = { fg = "#737994" } -- Inactive line numbers
+        hl.CursorLineNr = { fg = c.red }    -- Active line number (cursor line)
         local prompt = "#2d3149"
         hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
         hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
@@ -94,6 +94,8 @@ return {
       vim.o.number = true
       vim.o.cursorline = true
       vim.o.cursorlineopt = "number"
+      vim.o.signcolumn = "yes:1"
+      vim.o.numberwidth = 4
       vim.cmd([[colorscheme tokyonight-night]])
     end,
   },
