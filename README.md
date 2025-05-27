@@ -15,3 +15,11 @@
     * Nvim-surround : better bracket handling
     * nvim-snacks : dashboard and more 
     * TreeSJ : sequence handler
+
+## TODO : 
+* Autocomplete suggestions to be added
+* nvim tree plugins to be explored
+* Python debugger
+* Code Folding
+* Figure out what is nvim.snacks trying to do
+* Beautify the UI to rival VS Code
