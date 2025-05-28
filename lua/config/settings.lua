@@ -21,7 +21,7 @@ set.hidden = true
 
 -- show diagnostics
 vim.diagnostic.config({
-  virtual_text = { prefix = "●", spacing = 2, source = "if_many" },
+  virtual_text = { prefix = "● ", spacing = 2, source = "if_many" },
   signs = true,
   underline = true,
   update_in_insert = false,
