@@ -1,6 +1,4 @@
 ## Capabilities : 
-* autocomplete.lua
-    * Linting and formatting using Mason and Lsp-config
 * vcs.lua
     * VCS using gitsigns and fugitive
 * basic.lua
@@ -11,15 +9,14 @@
     * Which key : keybinding manual
     * Lualine status bar
 * useful_plugins.lua
-    * Telescope file explorer \[ might add nvim-tree \]
     * Nvim-surround : better bracket handling
     * nvim-snacks : dashboard and more 
     * TreeSJ : sequence handler
-
+* telescope.lua : Telescope file explorer \[ might add nvim-tree \]
+* trouble_blink.lua : trouble diagnostics and blink suite of tools 
+* blink_cmp.lua : autocompletion plugin configuration
+* mason_config.lua : Interface configuration between lsp and neovim
 ## TODO : 
-* Autocomplete suggestions to be added
-* nvim tree plugins to be explored
 * Python debugger
 * Code Folding
 * Figure out what is nvim.snacks trying to do
-* Beautify the UI to rival VS Code

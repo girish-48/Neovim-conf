@@ -80,14 +80,6 @@ return {
         hl.LineNrAbove = { fg = "#737994" }
         hl.LineNrBelow = { fg = "#737994" } -- Inactive line numbers
         hl.CursorLineNr = { fg = c.red }    -- Active line number (cursor line)
-        local prompt = "#2d3149"
-        -- hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
-        -- hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
-        -- hl.TelescopePromptNormal = { bg = prompt }
-        -- hl.TelescopePromptBorder = { bg = prompt, fg = prompt }
-        -- hl.TelescopePromptTitle = { bg = prompt, fg = prompt }
-        -- hl.TelescopePreviewTitle = { bg = c.bg_dark, fg = c.bg_dark }
-        -- hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
       end,
     },
     init = function()
@@ -101,19 +93,53 @@ return {
   },
 
   -- Lualine status line
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   lazy = false,
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   opts = {
+  --     icons_enabled        = true,
+  --     theme                = "auto",
+  --     tabline              = {},
+  --     winbar               = {},
+  --     inactive_winbar      = {},
+  --     extensions           = {},
+  --   },
+  -- },
   {
     "nvim-lualine/lualine.nvim",
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
-      icons_enabled = true,
-      theme = "auto",
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      options = {
+        icons_enabled        = true,
+        theme                = "auto",
+        component_separators = { left = "", right = "" },
+        section_separators   = { left = "", right = "" },
+      },
+
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff" },
+        lualine_c = { "filename" },
+        lualine_x = { "encoding", "fileformat", "filetype" },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
+
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "location" },
+        lualine_y = {},
+        lualine_z = {},
+      },
+
       tabline = {},
       winbar = {},
       inactive_winbar = {},
       extensions = {},
     },
-  },
+  }
 }
