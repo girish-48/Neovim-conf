@@ -33,12 +33,19 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      "isak102/telescope-git-file-history.nvim",
+      { "aaronhallaert/advanced-git-search.nvim", dependencies = { "tpope/vim-fugitive", "sindrets/diffview.nvim" }, },
+    },
     config = function()
-      local builtin = require("telescope.builtin")
+      require('telescope').setup { extensions = { fzf = {} } }
+      require("telescope").load_extension('fzf')
       require("telescope").load_extension("file_browser")
       require('telescope').load_extension('advanced_git_search')
       require('telescope').load_extension('git_file_history')
+      local builtin = require("telescope.builtin")
 
       vim.keymap.set("n", "ff",
         function() require("telescope").extensions.file_browser.file_browser({ initial_mode = "normal" }) end,
@@ -52,17 +59,5 @@ return {
       vim.keymap.set("n", "git", require("telescope.builtin").builtin, { desc = "Telescope: Builtin pickers" })
     end,
   },
-  -- Extension to file explorer
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  },
-  {
-    "aaronhallaert/advanced-git-search.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "tpope/vim-fugitive", "sindrets/diffview.nvim" },
-  },
-  {
-    "isak102/telescope-git-file-history.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-  },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }
