@@ -19,13 +19,4 @@ return {
       })
     end,
   },
-
-  -- Dashboard
-  {
-    "folke/snacks.nvim",
-    opts = {
-      dashboard = { enabled = true },
-      explorer = { enabled = false },
-    },
-  },
 }

@@ -1,12 +1,4 @@
 return {
-  -- needed for indents 
-  {
-    'saghen/blink.nvim',
-    build = 'cargo build --release',   -- for delimiters
-    -- all modules handle lazy loading internally
-    lazy = false,
-    opts = { indent = { enabled = true } }
-  },
   {
     "saghen/blink.cmp",
     dependencies = {
