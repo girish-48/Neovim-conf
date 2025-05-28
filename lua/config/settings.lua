@@ -18,3 +18,26 @@ set.termguicolors = true
 set.rnu = true
 set.nu = true
 set.hidden = true
+
+-- show diagnostics
+vim.diagnostic.config({
+  virtual_text = { prefix = "●", spacing = 2, source = "if_many" },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+  float = { border = "rounded", source = "always", header = "", prefix = "" },
+})
+
+-- Custom Gutter icons
+local signs = {
+  Error = "",
+  Warn  = "",
+  Hint  = "",
+  Info  = "󰙎",
+}
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
