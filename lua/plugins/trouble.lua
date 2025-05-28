@@ -1,25 +1,5 @@
 return {
   {
-    'saghen/blink.nvim',
-    build = 'cargo build --release', -- for delimiters
-    keys = {
-      -- tree
-      { '<C-e>',     '<cmd>BlinkTree reveal<cr>',       desc = 'Reveal current file in tree' },
-      { '<leader>e', '<cmd>BlinkTree toggle<cr>',       desc = 'Reveal current file in tree' },
-      { '<leader>E', '<cmd>BlinkTree toggle-focus<cr>', desc = 'Toggle file tree focus' },
-    },
-
-    -- all modules handle lazy loading internally
-    lazy = false,
-    opts = {
-      chartoggle = { enabled = true },
-      indent = { enabled = true },
-      tree = { enabled = true },
-      cmp = { enabled = true },
-    }
-  },
-
-  {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",

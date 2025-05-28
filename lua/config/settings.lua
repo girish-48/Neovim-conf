@@ -28,6 +28,9 @@ vim.diagnostic.config({
   severity_sort = true,
   float = { border = "rounded", source = "always", header = "", prefix = "" },
 })
+
+vim.keymap.set("n", "<C-l>", ":Lazy<CR>", { desc = "Open Lazy UI" })
+
 -- Custom Gutter icons
 -- local signs = {
 --   Error = "",
