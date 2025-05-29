@@ -37,31 +37,13 @@ return {
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = "gnn",
-            node_incremental = "grn",
-            node_decremental = "grm",
+            init_selection = "<leader>tnn",
+            node_incremental = "<leader>trn",
+            node_decremental = "<leader>trm",
           },
         },
       })
     end,
-  },
-
-  -- Which key helper
-  {
-    "folke/which-key.nvim",
-    lazy = false,
-    opts = {
-      preset = "helix", -- Options are classic, modern and helix
-    },
-    keys = {
-      {
-        "<leader>f",
-        function()
-          require("which-key").show({ global = true })
-        end,
-        desc = "Buffer Local Keymaps (which-key)",
-      },
-    },
   },
 
   -- Tokyonight theme
@@ -92,20 +74,6 @@ return {
     end,
   },
 
-  -- Lualine status line
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   lazy = false,
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   opts = {
-  --     icons_enabled        = true,
-  --     theme                = "auto",
-  --     tabline              = {},
-  --     winbar               = {},
-  --     inactive_winbar      = {},
-  --     extensions           = {},
-  --   },
-  -- },
   {
     "nvim-lualine/lualine.nvim",
     lazy = false,

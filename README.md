@@ -12,11 +12,11 @@
     * Nvim-surround : better bracket handling
     * nvim-snacks : dashboard and more 
     * TreeSJ : sequence handler
-* telescope.lua : Telescope file explorer \[ might add nvim-tree \]
+* telescope.lua : Telescope file explorer \[ might add nvim-tree \] 
+* snacks.lua : Much more extensive than telescope and allows a lot more functionality 
 * trouble_blink.lua : trouble diagnostics and blink suite of tools 
 * blink_cmp.lua : autocompletion plugin configuration
 * mason_config.lua : Interface configuration between lsp and neovim
 ## TODO : 
 * Python debugger
 * Code Folding
-* Figure out what is nvim.snacks trying to do
