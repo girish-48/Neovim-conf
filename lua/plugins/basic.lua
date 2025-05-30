@@ -74,6 +74,7 @@ return {
     end,
   },
 
+  -- Lualine
   {
     "nvim-lualine/lualine.nvim",
     lazy = false,

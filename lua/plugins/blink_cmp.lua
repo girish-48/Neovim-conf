@@ -20,7 +20,7 @@ return {
           auto_show = true,
           auto_show_delay_ms = 250,
           treesitter_highlighting = true,
-          window = { border = "rounded" },
+          window = { border = "bold" },
         },
 
         list = {
@@ -31,7 +31,7 @@ return {
         },
 
         menu = {
-          border = "rounded",
+          border = "bold",
 
           cmdline_position = function()
             if vim.g.ui_cmdline_pos ~= nil then
