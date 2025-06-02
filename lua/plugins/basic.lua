@@ -1,3 +1,11 @@
+local check_neovide = function()
+  if vim.g.neovide then
+    return false
+  else
+    return true
+  end
+end
+
 return {
   {
     "sphamba/smear-cursor.nvim",
@@ -60,7 +68,7 @@ return {
     opts = {
 
       style = "night",
-      transparent = true,
+      transparent = check_neovide(),
       terminal_colors = true,
       lualine_bold = true,
 
