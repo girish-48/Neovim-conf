@@ -1,0 +1,22 @@
+---@class snacks.scroll.Config
+---@field animate snacks.animate.Config|{}
+---@field animate_repeat snacks.animate.Config|{}|{delay:number}
+
+local val = 1200
+local stp = 150
+return {
+  animate = {
+    duration = { step = stp, total = val },
+    easing = "inOutSine",
+  },
+  -- faster animation when repeating scroll after delay
+  animate_repeat = {
+    delay = 100, -- delay in ms before using the repeat animation
+    duration = { step = stp, total = val },
+    easing = "inOutSine",
+  },
+  -- what buffers to animate
+  filter = function(buf)
+    return vim.g.snacks_scroll ~= false and vim.b[buf].snacks_scroll ~= false and vim.bo[buf].buftype ~= "terminal"
+  end,
+}
