@@ -4,15 +4,6 @@ return {
     enabled = vim.g.neovide == nil,
     opts = {},
   },
-  -- {
-  --   "karb94/neoscroll.nvim",
-  --   config = function ()
-  --     local neoscroll = require("neoscroll")
-  --     neoscroll.setup({
-  --       easing = "sine"
-  --     })
-  --   end
-  -- },
 
   -- Comments
   {

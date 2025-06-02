@@ -1,6 +1,7 @@
 ## Capabilities : 
 * vcs.lua : VCS using gitsigns and fugitive
 * basic.lua
+    * smear cursor : neovide like cursor animation \[also makes cursor move faster\]
     * tokyonight theme, hevily modified 
     * Treesitter : Code parsing and formatting 
     * Autopairs : Autocomplete for brackets
@@ -17,6 +18,4 @@
 * mason.lua : Interface configuration between lsp, linter, formatter and debugger & neovim
 
 * Supports autocompletion for python, cpp and rust \[rust-analyzer needs to be installed through command line\]
-## TODO : 
-* Python debugger
-* Code Folding
+* Optional DAP protocol support is added but by default its turned off, I had used nvim-dap-view for the ui as it has more space
